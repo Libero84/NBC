@@ -1,1 +1,5 @@
-<p>This is the partial for view 1.</p>
+<div ng-controller="View1Ctrl">
+  <label for="tax">Rodzaj Rozliczenia</label>
+  <input type="text" placeholder="Wpisz wartość" id="tax" ng-model="val">
+  <div ng-bind="result" class="show-result"></div>
+</div>

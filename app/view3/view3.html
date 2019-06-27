@@ -1,0 +1,22 @@
+<div ng-controller="View3Ctrl">
+  <table>
+    <thead>
+    <tr>
+      <th class="border-bottom">Odbiorca</th>
+      <th class="border-bottom">Tytuł przelewu</th>
+      <th ng-click="sortData('amount')" class="border-bottom sort">Kwota <span ng-class="getSortClass('amount')"></span></th>
+      <th class="border-bottom">Waluta</th>
+      <th ng-click="sortData('date')" class="border-bottom sort">Data modyfikacji <span ng-class="getSortClass('date')"></span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="transferList in transferLists | orderBy:sortColumn:reverseSort">
+      <td class="border-bottom">{{transferList.beneficiary.name1}}</td>
+      <td class="border-bottom">{{transferList.transactionData.description}}</td>
+      <td class="border-bottom">{{transferList.transactionData.amount}}</td>
+      <td class="border-bottom">{{transferList.transactionData.currencyCode}}</td>
+      <td class="border-bottom">{{(transferList.modificationTime.timeMillis + '000') | date: 'dd.MM.yyyy'}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

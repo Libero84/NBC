@@ -1,5 +1,8 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div ng-controller="View2Ctrl">
+  <form novalidate name="ibanForm">
+    <label for="iban">IBAN NUMBER:</label>
+    <input id="iban" type="text" name="ibanNr" ng-model="ibanValue" placeholder="Example: PL 9999..." iban-number>
+    <div class="error" ng-show="ibanForm.ibanNr.$error.ibanNumber">Niepoprawny numer IBAN</div>
+  </form>
+</div>
+
